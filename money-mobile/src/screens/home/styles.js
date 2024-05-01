@@ -23,6 +23,7 @@ export default StyleSheet.create({
     padding: 20,
     borderRadius: 20,
     marginTop: 10,
+    marginBottom: 10,
   },
 
   dashboardText: {
@@ -50,6 +51,16 @@ export default StyleSheet.create({
     fontSize: FontSize.sm,
     color: Colors.dark_gray,
     fontWeight: "bold",
-    marginTop: 15,
+    marginTop: 5,
+  },
+
+  btnAdd: {
+    position: "absolute",
+    bottom: 14,
+  },
+
+  btnAddImage: {
+    width: 50,
+    height: 50,
   },
 })
