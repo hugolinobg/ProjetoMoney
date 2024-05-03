@@ -1,10 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react"
+import ReactDOM from "react-dom/client"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "./pages/Home/Home"
-import './index.css'
+import CardExpense from "./pages/CardExpense/CardExpense"
+import "./index.css"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/despesa" element={<CardExpense />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
