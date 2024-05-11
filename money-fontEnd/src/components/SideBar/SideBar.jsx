@@ -1,24 +1,24 @@
 import { Link } from "react-router-dom"
-import "./SideBar.css"
+import "./Sidebar.css"
 import icons from "../../constants/icons"
 
-const SideBar = () => {
+const Sidebar = () => {
   return (
-    <div className="container">
+    <div className="sidebar">
       <Link to="/">
-        <img src={icons.home} alt="" />
+        <img src={icons.home} alt="" className="icons" />
       </Link>
       <Link to="/despesa">
-        <img src={icons.add} alt="" />
+        <img src={icons.add} alt="" className="icons" />
       </Link>
-      <Link to="/despesa">
-        <img src={icons.config} alt="" />
+      <Link to="#">
+        <img src={icons.config} alt="" className="icons" />
       </Link>
-      <Link to="/despesa">
-        <img src={icons.logout} alt="" />
+      <Link to="#">
+        <img src={icons.logout} alt="" className="icons" />
       </Link>
     </div>
   )
 }
 
-export default SideBar
+export default Sidebar

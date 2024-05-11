@@ -1,4 +1,19 @@
+.sidebar {
+  background-color: var(--color-blue);
+  width: 50px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+}
 
-.container {
-  background-color: #3869FF;
+.sidebar a {
+  padding-top: 2rem;
+  display: block;
+}
+
+.sidebar a:hover {
+  opacity: 0.5;
 }

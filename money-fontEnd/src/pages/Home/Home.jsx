@@ -1,11 +1,13 @@
 import "./Home.css"
 
-import SideBar from "../../components/SideBar/SideBar"
+import Sidebar from "../../components/Sidebar/Sidebar"
+import Navbar from "../../components/Navbar/Navbar"
 
 const Home = () => {
   return (
     <>
-      <SideBar/>
+      <Sidebar />
+      <Navbar />
       <h1>Hello World Home!!!</h1>
     </>
   )
