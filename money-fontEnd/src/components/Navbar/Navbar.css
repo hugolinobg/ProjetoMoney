@@ -21,3 +21,8 @@
   font-size: var(--fsize-md);
   color: var(--color-dark-gray);
 }
+
+.dashboard span,
+p {
+  font-weight: bold;
+}
