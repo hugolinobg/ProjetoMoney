@@ -1,0 +1,23 @@
+.container-cardExpense {
+  font-size: var(--fsize-sm);
+  margin: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-cadEpense {
+  width: 50rem;
+  border: 0.1rem solid var(--color-medium-gray);
+  padding: 4rem;
+  border-radius: 1rem;
+}
+
+.input-group {
+  margin: 4rem 0;
+}
+
+.input-lg {
+  font-size: var(--fsize-2xl);
+}
+

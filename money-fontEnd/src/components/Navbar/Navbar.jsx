@@ -9,7 +9,7 @@ const Navbar = () => {
 
       <div>
         <input type="text" />
-        <button>Buscar</button>
+        <button className="btn btn-blue">Buscar</button>
       </div>
        
       <div className="dashboard">

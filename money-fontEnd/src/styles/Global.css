@@ -16,7 +16,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
+  --color-light: #fff;
+  --color-dark: #242424;
 
   --color-blue: #3869ff;
   --color-dark-blue: #2b56d5;
@@ -41,6 +43,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-dark);
 }
 
 /* body {
@@ -51,14 +54,18 @@
   min-height: 100vh;
 } */
 
+.text-right {
+  text-align: right;
+}
+
 .icons {
   width: var(--fsize-2xl);
   height: var(--fsize-2xl);
 }
 
 .icons-sm {
-  width: var(--fsize-md);
-  height: var(--fsize-md);
+  width: var(--fsize-sm);
+  height: var(--fsize-sm);
 }
 
 .ml-10 {
@@ -77,19 +84,122 @@ input {
   border: 0.1rem solid var(--color-medium-gray);
   padding: 1rem;
   font-size: var(--fsize-md);
+  background-color: var(--color-dark);
 }
 
 select {
-  background-color: var(--color-white);
+  background-color: var(--color-dark);
   font-size: var(--fsize-md);
   display: inline-block;
   padding: 1rem;
   border: 0.1rem solid var(--color-medium-gray);
 }
 
+.btn {
+  padding: 1rem;
+  font-size: var(--fsize-md);
+  cursor: pointer;
+}
+
+.btn-blue {
+  border: 0.1rem solid var(--color-blue);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.btn-blue:hover {
+  background-color: var(--color-dark-blue);
+}
+
+.btn-blue-outline {
+  border: 0.1rem solid var(--color-blue);
+  background-color: var(--color-dark);
+  color: var(--color-blue);
+}
+
+.btn-blue-outline:hover {
+  border: 0.1rem solid var(--color-blue);
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.btn-green {
+  border: 0.1rem solid var(--color-green);
+  background-color: var(--color-green);
+  color: var(--color-white);
+}
+
+.btn-green:hover {
+  background-color: var(--color-dark-green);
+}
+
+.btn-red-outline {
+  border: 0.1rem solid var(--color-green);
+  background-color: var(--color-dark);
+  color: var(--color-green);
+}
+
+.btn-red-outline:hover {
+  border: 0.1rem solid var(--color-dark-green);
+  background-color: var(--color-dark-green);
+  color: var(--color-white);
+}
+
+.btn-red {
+  border: 0.1rem solid var(--color-red);
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn-red:hover {
+  background-color: var(--color-dark-red);
+}
+
+.btn-red-outline {
+  border: 0.1rem solid var(--color-red);
+  background-color: var(--color-dark);
+  color: var(--color-red);
+}
+
+.btn-red-outline:hover {
+  border: 0.1rem solid var(--color-dark-red);
+  background-color: var(--color-dark-red);
+  color: var(--color-white);
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+td {
+  padding: 1rem 0rem;
+  border-bottom: 0.1rem solid var(--color-gray);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+
+  input {
+    background-color: var(--color-light);
+  }
+
+  select {
+    background-color: var(--color-light);
+  }
+
+  .btn-blue-outline {
+    background-color: var(--color-white);
+  }
+
+  .btn-green-outline {
+    background-color: var(--color-white);
+  }
+
+  .btn-red-outline {
+    background-color: var(--color-white);
   }
 }
