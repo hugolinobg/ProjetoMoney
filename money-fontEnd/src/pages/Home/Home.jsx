@@ -3,9 +3,13 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import Navbar from '../../components/Navbar/Navbar'
 import './Home.css'
 import icons from '../../constants/icons'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
   const [expenses, setExpenses] = useState([])
+  const navigate = useNavigate()
+
+
 
   let api = [
     {
@@ -74,6 +78,10 @@ const Home = () => {
     handleListExpense()
   }, [])
 
+const handleNewExpense = () =>{
+  navigate('/expense')
+}
+
   return (
     <>
       <Sidebar />
@@ -81,7 +89,9 @@ const Home = () => {
       <div className="container-home">
         <div className="title-home">
           <h1>Despesas</h1>
-          <button className="btn btn-green">Adicionar Despesa</button>
+          <button className="btn btn-green" onClick={handleNewExpense}>
+            Adicionar Despesa
+          </button>
         </div>
         <div className="box-expense">
           <table>
