@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "description": "",
+  "author": "Hugolino B. G.",
+  "license": "MIT",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "dev": "node --trace-warnings --watch app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}

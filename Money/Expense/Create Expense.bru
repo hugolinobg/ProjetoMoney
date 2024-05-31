@@ -1,0 +1,27 @@
+meta {
+  name: Create Expense
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3300/v1/api/expense/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTA2ZDE1ZGMyZGUwZGE0MDM1MTRjMyIsImlhdCI6MTcwOTIxMzgxOSwiZXhwIjoxNzA5MzAwMjE5fQ.glMIAuVKcLnA2JzUEHAdj9X8S29p19r_GG6ewPNr940
+}
+
+body:json {
+  {
+      "sector": "LMT",
+      "numberPatrimony": 142784,
+      "description": "Notebook Dell",
+      "unitDeliveryDate": "11/05/2022",
+      "previousSector": null,
+      "transferDate": null,
+      "destinationLocation": null
+  }
+}

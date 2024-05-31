@@ -12,7 +12,7 @@ const Sidebar = () => {
           className="icons"
         />
       </Link>
-      <Link to="/expense">
+      <Link to="/expense/add">
         <img src={icons.add} alt="icone de uma Engrenagem" className="icons" />
       </Link>
       <Link to="#">

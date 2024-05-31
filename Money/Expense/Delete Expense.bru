@@ -1,0 +1,15 @@
+meta {
+  name: Delete Expense
+  type: http
+  seq: 4
+}
+
+delete {
+  url: http://localhost:3300/v1/api/expense/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTA2ZDE1ZGMyZGUwZGE0MDM1MTRjMyIsImlhdCI6MTcwOTMwMTQ2NywiZXhwIjoxNzA5NDc0MjY3fQ.OVQWdj04NTHSmu0pRZErIYh2Bk4HIm8Y1vajNv_ioQE
+}

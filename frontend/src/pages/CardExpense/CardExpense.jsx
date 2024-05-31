@@ -1,24 +1,37 @@
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Navbar from '../../components/Navbar/Navbar'
 import './CardExpense.css'
 
 const CardExpense = () => {
+  const { idUrl } = useParams()
+  const navigate = useNavigate()
+
   const [price, setPrice] = useState(0)
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('')
-
-  const navigate = useNavigate()
+  
 
   const handleClose = () => {
     navigate('/')
   }
 
   const handleSaveData = () => {
-    console.log(price, description, category)
-    //  navigate('/')
+    navigate('/')
   }
+
+  const handleGetDataExpense = (id) => {
+    setPrice(150)
+    setDescription('Compras de mercado')
+    setCategory('Mercado')
+  }
+
+  useEffect(() => {
+    if (idUrl != 'add') {
+      handleGetDataExpense(idUrl)
+    }
+  }, [])
 
   return (
     <>
@@ -26,7 +39,7 @@ const CardExpense = () => {
       <Navbar />
       <div className="container-cardExpense">
         <div className="box-cadEpense">
-          <h1>Nova Despesa</h1>
+          {idUrl == 'add' ? <h1>Nova Despesa</h1> : <h1>Editar Despesa</h1>}
 
           <div className="input-group">
             <p>Valor</p>

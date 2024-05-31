@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/expense" element={<CardExpense />} />
+        <Route path="/expense/:idUrl" element={<CardExpense />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

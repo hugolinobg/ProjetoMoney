@@ -1,0 +1,27 @@
+meta {
+  name: Update Expense
+  type: http
+  seq: 3
+}
+
+put {
+  url: http://localhost:3300/v1/api/expense/
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTA2ZDE1ZGMyZGUwZGE0MDM1MTRjMyIsImlhdCI6MTcwOTIxMzgxOSwiZXhwIjoxNzA5MzAwMjE5fQ.glMIAuVKcLnA2JzUEHAdj9X8S29p19r_GG6ewPNr940
+}
+
+body:json {
+  {
+    "sector": "Sala 04",
+      "numberPatrimony": 1174569,
+      "description": "celular",
+      "unitDeliveryDate": "05/01/2024",
+      "previousSector": "Sala 12",
+      "transferDate": "26/01/2024",
+      "destinationLocation": "Lins"
+  }
+}

@@ -6,10 +6,9 @@ import icons from '../../constants/icons'
 import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-  const [expenses, setExpenses] = useState([])
   const navigate = useNavigate()
-
-
+  const [expenses, setExpenses] = useState([])
+  const [total, setTotal] = useState(0)
 
   let api = [
     {
@@ -70,7 +69,26 @@ const Home = () => {
     },
   ]
 
-  const handleListExpense = () => {
+  let dataFilters = [
+    {
+      id: 1,
+      icon: 'https://jornadajs-devpoint.s3.amazonaws.com/icon-carro.png',
+      category: 'Carro',
+      description: 'Pagamento IPVA',
+      price: 2500,
+    },
+  ]
+
+  const handleListExpense = (filters) => {
+    if (filters) {
+      api = setExpenses(dataFilters)
+    }
+
+    const priceTotal = api.reduce((prev, current) => {
+      return prev + current.price
+    }, 0)
+
+    setTotal(priceTotal)
     setExpenses(api)
   }
 
@@ -78,14 +96,22 @@ const Home = () => {
     handleListExpense()
   }, [])
 
-const handleNewExpense = () =>{
-  navigate('/expense')
-}
+  const handleNewExpense = () => {
+    navigate('/expense/add')
+  }
+
+  const handleEditExpense = (id) => {
+    navigate(`/expense/${id}`)
+  }
+
+  const handleDeleteExpense = (id) => {
+    alert(`${id}`)
+  }
 
   return (
     <>
       <Sidebar />
-      <Navbar />
+      <Navbar onClickSearch={handleListExpense} total={total} search={true} />
       <div className="container-home">
         <div className="title-home">
           <h1>Despesas</h1>
@@ -118,11 +144,17 @@ const handleNewExpense = () =>{
                       })}
                     </td>
                     <td className="text-right">
-                      <button className="btn btn-blue">
+                      <button
+                        className="btn btn-blue"
+                        onClick={() => handleEditExpense(item.id)}
+                      >
                         <img className="icons-sm" src={icons.edit} />
                       </button>
 
-                      <button className="btn btn-red ml-10">
+                      <button
+                        className="btn btn-red ml-10"
+                        onClick={() => handleDeleteExpense(item.id)}
+                      >
                         <img className="icons-sm" src={icons.remove} />
                       </button>
                     </td>
